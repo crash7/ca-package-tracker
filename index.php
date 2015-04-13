@@ -55,6 +55,9 @@
 			$response = preg_replace('/<p>Resultados.+?<\/p>/', '', $response); // we already know/show this one
 			$response = preg_replace('/(?<=class=")table/', 'table table-hover table-condensed', $response); // fancier table
 			$response = preg_replace('/<script>.+?<\/script>/', '', $response); // chau js call
+			$response = preg_replace('/<button.+?<\/button>/', '', $response); // chau botón de imprimir, we love trees
+			$response = preg_replace('/collapse/', '', $response); // chau nacional oculto
+			$response = preg_replace('/accordion-heading/', 'hidden', $response); // chau accordion nacional
 		} else {
 			$hascode = false;
 			$badcode = true;
